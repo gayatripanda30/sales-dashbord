@@ -1,26 +1,107 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ===========================
+   GLOBAL STYLES
+=========================== */
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dashboard Heading */
+.dashboard-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 30px 0 20px 30px;
+  color: #222;
+}
+
+/* ===========================
+   Controls Row
+=========================== */
+.dashboard-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 30px 25px;
+}
+
+.dashboard-controls input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 220px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.dashboard-controls input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 4px rgba(99, 102, 241, 0.4);
+}
+
+/* ===========================
+   Buttons
+=========================== */
+.tab-btn {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.tab-btn:hover {
+  background: #eef0ff;
+  border-color: #6366f1;
+}
+
+.tab-btn.active {
+  background: #6366f1;
+  color: white;
+  border-color: #6366f1;
+}
+
+/* ===========================
+   Chart Area
+=========================== */
+.chart-wrapper {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  margin: 0 30px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ===========================
+   Tooltip
+=========================== */
+.custom-tooltip {
+  background: white;
+  padding: 12px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #eee;
+}
+
+.custom-tooltip .label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.custom-tooltip .value {
+  font-size: 14px;
+  margin-top: 4px;
+  color: #6366f1;
+  font-weight: 500;
 }
