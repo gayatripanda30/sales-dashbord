@@ -11,7 +11,7 @@ const Input = ({ value, onChange, placeholder }: InputProps) => {
       value={value}
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
-      className="border p-2 rounded mb-4"
+      className="input"
     />
   );
 };

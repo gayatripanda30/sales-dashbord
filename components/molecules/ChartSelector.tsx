@@ -1,8 +1,10 @@
 "use client";
 
+
+type ChartType = "bar" | "line" | "pie";
 interface ChartSelectProps {
-  chartType: string;
-  setChartType: (type: string) => void;
+  chartType: ChartType;
+  setChartType: (type: ChartType) => void;
 }
 
 export default function ChartSelect({ chartType, setChartType }: ChartSelectProps) {
